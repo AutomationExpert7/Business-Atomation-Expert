@@ -114,8 +114,8 @@ export default function HomePage() {
           </div>
           <div className="space-y-3 relative z-10">
             {[
-              { href: "/team.html", icon: Users, label: "Highly personalized team" },
-              { href: "/case-studies.html", icon: Crown, label: "Hands-on, highly specialized" },
+              { href: "/team", icon: Users, label: "Highly personalized team" },
+              { href: "/case-studies", icon: Crown, label: "Hands-on, highly specialized" },
               { href: "#consultation", icon: TriangleAlert, label: "Get the attention you need" },
             ].map(({ href, icon: Icon, label }) => (
               <a key={label} className="block" href={href}>

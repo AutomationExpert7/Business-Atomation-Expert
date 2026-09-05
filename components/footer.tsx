@@ -82,7 +82,7 @@ export function Footer() {
             </a>
           </div>
 
-          <Link href="/contact-us">
+          <Link href="#consultation">
             <Button
               variant="outline"
               className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 py-2 rounded-full font-medium"

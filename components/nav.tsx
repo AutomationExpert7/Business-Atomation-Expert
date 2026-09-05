@@ -7,13 +7,25 @@ import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MobileMenuButton } from "@/components/mobile-menu"
 
+const NAV_LINKS = [
+  { href: "/", label: "HOME" },
+  { href: "/services", label: "SERVICES" },
+  { href: "/case-studies", label: "CASE STUDIES" },
+  { href: "/team", label: "TEAM" },
+]
+
+function isLinkActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/"
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
+
 export function Nav() {
   const pathname = usePathname()
-  const isHome = pathname === "/"
 
-  const homeLinkClass = isHome
-    ? "text-primary-accent border-b-2 border-primary-accent pb-1 whitespace-nowrap"
-    : "hover:text-primary-accent pb-1 whitespace-nowrap"
+  const getLinkClass = (href: string, base: string) =>
+    isLinkActive(pathname, href)
+      ? `text-primary-accent border-b-2 border-primary-accent pb-1 whitespace-nowrap`
+      : `${base} pb-1 whitespace-nowrap`
 
   return (
     <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-20 bg-dark-primary/95 backdrop-blur-md">
@@ -34,12 +46,12 @@ export function Nav() {
 
       {/* Desktop nav (xl+) */}
       <div className="hidden xl:flex items-center space-x-8 2xl:space-x-12 text-sm font-medium">
-        <Link href="/" className={homeLinkClass}>
+        <Link href="/" className={getLinkClass("/", "hover:text-primary-accent")}>
           HOME
         </Link>
         <div className="flex items-center space-x-1 hover:text-primary-accent cursor-pointer whitespace-nowrap">
           <Link
-            className="hover:text-primary-accent whitespace-nowrap"
+            className={getLinkClass("/services", "hover:text-primary-accent")}
             href="/services"
           >
             SERVICES
@@ -47,7 +59,7 @@ export function Nav() {
           <ChevronDown className="w-4 h-4" />
         </div>
         <Link
-          className="hover:text-primary-accent whitespace-nowrap"
+          className={getLinkClass("/case-studies", "hover:text-primary-accent")}
           href="/case-studies"
         >
           CASE STUDIES
@@ -56,13 +68,13 @@ export function Nav() {
           BLOG
         </a>
         <Link
-          className="hover:text-primary-accent whitespace-nowrap"
+          className={getLinkClass("/team", "hover:text-primary-accent")}
           href="/team"
         >
           TEAM
         </Link>
       </div>
-      <Link href="/contact-us" className="hidden xl:block flex-shrink-0">
+      <Link href="#consultation" className="hidden xl:block flex-shrink-0">
         <Button
           variant="outline"
           className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 py-2 rounded-full font-medium whitespace-nowrap"
@@ -73,22 +85,22 @@ export function Nav() {
 
       {/* Tablet nav (lg only) */}
       <div className="hidden lg:flex xl:hidden items-center space-x-6 text-sm font-medium">
-        <Link href="/" className={homeLinkClass}>
+        <Link href="/" className={getLinkClass("/", "hover:text-primary-accent")}>
           HOME
         </Link>
         <div className="flex items-center space-x-1 hover:text-primary-accent cursor-pointer">
-          <Link href="/services" className="hover:text-primary-accent">
+          <Link href="/services" className={getLinkClass("/services", "hover:text-primary-accent")}>
             SERVICES
           </Link>
           <ChevronDown className="w-4 h-4" />
         </div>
-        <Link href="/case-studies" className="hover:text-primary-accent">
+        <Link href="/case-studies" className={getLinkClass("/case-studies", "hover:text-primary-accent")}>
           CASE STUDIES
         </Link>
         <a className="hover:text-primary-accent" href="#">
           BLOG
         </a>
-        <Link href="/team" className="hover:text-primary-accent">
+        <Link href="/team" className={getLinkClass("/team", "hover:text-primary-accent")}>
           TEAM
         </Link>
         <MobileMenuButton />
@@ -96,7 +108,7 @@ export function Nav() {
 
       {/* Mobile row (below lg) */}
       <div className="flex items-center space-x-2 sm:space-x-3 lg:hidden">
-        <Link href="/contact-us" className="hidden sm:block">
+        <Link href="#consultation" className="hidden sm:block">
           <Button
             variant="outline"
             className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm whitespace-nowrap"

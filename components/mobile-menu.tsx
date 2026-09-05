@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
 import { useState } from "react"
 
@@ -12,8 +13,15 @@ const links = [
   { href: "/team", label: "TEAM" },
 ]
 
+function isLinkActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/"
+  if (href === "#") return false
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
+
 export function MobileMenuButton() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
@@ -36,7 +44,7 @@ export function MobileMenuButton() {
             <Link
               key={link.label}
               href={link.href}
-              className="mobile-menu-link"
+              className={`mobile-menu-link${isLinkActive(pathname, link.href) ? " active-link" : ""}`}
               onClick={() => setOpen(false)}
             >
               {link.label}
