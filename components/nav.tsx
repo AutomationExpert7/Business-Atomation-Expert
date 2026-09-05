@@ -74,7 +74,7 @@ export function Nav() {
           TEAM
         </Link>
       </div>
-      <Link href="#consultation" className="hidden xl:block flex-shrink-0">
+      <Link href="/#consultation" className="hidden xl:block flex-shrink-0">
         <Button
           variant="outline"
           className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 py-2 rounded-full font-medium whitespace-nowrap"
