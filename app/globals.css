@@ -1,0 +1,577 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* ==========================================================
+   Custom additions on top of Tailwind — mobile menu overlay
+   and infinite testimonial marquee.
+   ========================================================== */
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(85vw, 340px);
+  background: #0d0d0d;
+  border-left: 1px solid rgba(253, 221, 189, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 96px 28px 32px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-overlay.open .mobile-menu-panel {
+  transform: translateX(0);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #f5f5f5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active-link {
+  color: rgb(253, 221, 189);
+}
+
+.mobile-menu-cta-wrap {
+  margin-top: 24px;
+  display: block;
+}
+
+.mobile-menu-cta {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 2px solid rgb(253, 221, 189);
+  color: rgb(253, 221, 189);
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mobile-menu-cta:hover {
+  background: rgb(253, 221, 189);
+  color: #111;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.marquee-track {
+  animation-duration: 45s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-left {
+  animation-name: marquee-scroll-left;
+}
+
+.marquee-right {
+  animation-name: marquee-scroll-right;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ==========================================================
+   Services page — scoped card grid with animated hover border
+   ========================================================== */
+
+.cs-section-gap {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+@media (min-width: 640px) {
+  .cs-section-gap {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+.svc-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px !important;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 620px) {
+  .svc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+.svc-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 4px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  isolation: isolate;
+}
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+.svc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #f5c99a 70deg,
+    rgba(245, 201, 154, 0.65) 130deg,
+    transparent 190deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation: svc-spin 3.6s linear infinite;
+  animation-play-state: paused;
+}
+.svc-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+@keyframes svc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.svc-card-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: 17px;
+  background: #12151d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 30px 26px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.35s ease;
+}
+.svc-card:hover .svc-card-inner {
+  background: #161a24;
+}
+
+.svc-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 201, 154, 0.1);
+  border: 1px solid rgba(245, 201, 154, 0.35);
+  color: #f5c99a;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.svc-card:hover .svc-icon {
+  background: rgba(245, 201, 154, 0.18);
+  transform: scale(1.06);
+}
+.svc-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f5c99a;
+  background: rgba(245, 201, 154, 0.08);
+  border: 1px solid rgba(245, 201, 154, 0.3);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+.svc-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.svc-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #c9ccd1;
+  flex-grow: 1;
+}
+
+/* ==========================================================
+   Team page — scoped card grid with animated hover border
+   ========================================================== */
+
+.team-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px !important;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 620px) {
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+.team-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 4px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  isolation: isolate;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #f5c99a 100deg,
+    rgba(245, 201, 154, 0.65) 130deg,
+    transparent 190deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation: team-spin 3.6s linear infinite;
+  animation-play-state: paused;
+}
+.team-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+@keyframes team-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.team-card-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: 17px;
+  background: #12151d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 30px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background 0.35s ease;
+}
+.team-card:hover .team-card-inner {
+  background: #161a24;
+}
+
+.team-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid #f5c99a;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.team-name {
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.team-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f5c99a;
+  margin-bottom: 18px;
+}
+.team-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 2px solid #f5c99a;
+  color: #f5c99a;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+  margin-top: auto;
+}
+.team-btn:hover {
+  background: #f5c99a;
+  color: #0b0d12;
+}
+
+/* ==========================================================
+   Case studies page — stats strip
+   ========================================================== */
+
+.cs-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.cs-stats-grid > div {
+  text-align: center;
+  padding: 12px 6px;
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+}
+.cs-stats-num {
+  font-weight: 700;
+  color: #f5c99a;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+.cs-stats-label {
+  color: #c9ccd1;
+  font-size: 9.5px;
+  line-height: 1.25;
+}
+@media (min-width: 640px) {
+  .cs-stats-grid {
+    gap: 20px !important;
+  }
+  .cs-stats-grid > div {
+    padding: 24px;
+  }
+  .cs-stats-num {
+    font-size: 34px;
+  }
+  .cs-stats-label {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .cs-stats-num {
+    font-size: 38px;
+  }
+}
+
+/* ==========================================================
+   Case studies page — stats strip
+   ========================================================== */
+
+.cs-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.cs-stats-grid > div {
+  text-align: center;
+  padding: 12px 6px;
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+}
+.cs-stats-num {
+  font-weight: 700;
+  color: #f5c99a;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+.cs-stats-label {
+  color: #c9ccd1;
+  font-size: 9.5px;
+  line-height: 1.25;
+}
+@media (min-width: 640px) {
+  .cs-stats-grid {
+    gap: 20px !important;
+  }
+  .cs-stats-grid > div {
+    padding: 24px;
+  }
+  .cs-stats-num {
+    font-size: 34px;
+  }
+  .cs-stats-label {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .cs-stats-num {
+    font-size: 38px;
+  }
+}
