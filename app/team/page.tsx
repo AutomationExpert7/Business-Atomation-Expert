@@ -57,7 +57,7 @@ export default function TeamPage() {
           <p className="text-primary-accent font-bold mb-8 sm:mb-10 tracking-wider text-xs sm:text-sm">
             LET US HELP YOU
           </p>
-          <a href="/contact-us">
+          <a href="/#consultation" className="inline-block">
             <Button
               variant="outline"
               className="h-11 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium w-full sm:w-auto max-w-xs sm:max-w-none"

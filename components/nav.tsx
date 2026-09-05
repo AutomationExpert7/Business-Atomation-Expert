@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { MobileMenuButton } from "@/components/mobile-menu"
@@ -24,7 +23,7 @@ export function Nav() {
 
   const getLinkClass = (href: string, base: string) =>
     isLinkActive(pathname, href)
-      ? `text-primary-accent border-b-2 border-primary-accent pb-1 whitespace-nowrap`
+      ? "text-primary-accent border-b-2 border-primary-accent pb-1 whitespace-nowrap"
       : `${base} pb-1 whitespace-nowrap`
 
   return (
@@ -46,34 +45,42 @@ export function Nav() {
 
       {/* Desktop nav (xl+) */}
       <div className="hidden xl:flex items-center space-x-8 2xl:space-x-12 text-sm font-medium">
-        <Link href="/" className={getLinkClass("/", "hover:text-primary-accent")}>
+        <Link
+          href="/"
+          className={getLinkClass("/", "hover:text-primary-accent")}
+        >
           HOME
         </Link>
-        <div className="flex items-center space-x-1 hover:text-primary-accent cursor-pointer whitespace-nowrap">
-          <Link
-            className={getLinkClass("/services", "hover:text-primary-accent")}
-            href="/services"
-          >
-            SERVICES
-          </Link>
-          <ChevronDown className="w-4 h-4" />
-        </div>
+
         <Link
-          className={getLinkClass("/case-studies", "hover:text-primary-accent")}
+          href="/services"
+          className={getLinkClass("/services", "hover:text-primary-accent")}
+        >
+          SERVICES
+        </Link>
+
+        <Link
           href="/case-studies"
+          className={getLinkClass(
+            "/case-studies",
+            "hover:text-primary-accent"
+          )}
         >
           CASE STUDIES
         </Link>
+
         <a className="hover:text-primary-accent whitespace-nowrap" href="#">
           BLOG
         </a>
+
         <Link
-          className={getLinkClass("/team", "hover:text-primary-accent")}
           href="/team"
+          className={getLinkClass("/team", "hover:text-primary-accent")}
         >
           TEAM
         </Link>
       </div>
+
       <Link href="/#consultation" className="hidden xl:block flex-shrink-0">
         <Button
           variant="outline"
@@ -85,24 +92,41 @@ export function Nav() {
 
       {/* Tablet nav (lg only) */}
       <div className="hidden lg:flex xl:hidden items-center space-x-6 text-sm font-medium">
-        <Link href="/" className={getLinkClass("/", "hover:text-primary-accent")}>
+        <Link
+          href="/"
+          className={getLinkClass("/", "hover:text-primary-accent")}
+        >
           HOME
         </Link>
-        <div className="flex items-center space-x-1 hover:text-primary-accent cursor-pointer">
-          <Link href="/services" className={getLinkClass("/services", "hover:text-primary-accent")}>
-            SERVICES
-          </Link>
-          <ChevronDown className="w-4 h-4" />
-        </div>
-        <Link href="/case-studies" className={getLinkClass("/case-studies", "hover:text-primary-accent")}>
+
+        <Link
+          href="/services"
+          className={getLinkClass("/services", "hover:text-primary-accent")}
+        >
+          SERVICES
+        </Link>
+
+        <Link
+          href="/case-studies"
+          className={getLinkClass(
+            "/case-studies",
+            "hover:text-primary-accent"
+          )}
+        >
           CASE STUDIES
         </Link>
+
         <a className="hover:text-primary-accent" href="#">
           BLOG
         </a>
-        <Link href="/team" className={getLinkClass("/team", "hover:text-primary-accent")}>
+
+        <Link
+          href="/team"
+          className={getLinkClass("/team", "hover:text-primary-accent")}
+        >
           TEAM
         </Link>
+
         <MobileMenuButton />
       </div>
 
@@ -116,6 +140,7 @@ export function Nav() {
             Book
           </Button>
         </Link>
+
         <MobileMenuButton />
       </div>
     </nav>

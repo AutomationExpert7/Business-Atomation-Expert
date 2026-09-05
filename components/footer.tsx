@@ -39,7 +39,7 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center sm:justify-start">
-            <Link href="/contact-us">
+            <Link href="/#consultation">
               <Button
                 variant="outline"
                 className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 py-2 rounded-full font-medium w-full sm:w-auto"
@@ -82,7 +82,7 @@ export function Footer() {
             </a>
           </div>
 
-          <Link href="#consultation">
+          <Link href="/#consultation">
             <Button
               variant="outline"
               className="h-10 border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-dark-primary bg-transparent px-6 py-2 rounded-full font-medium"
