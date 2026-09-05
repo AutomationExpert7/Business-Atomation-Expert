@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/services", label: "SERVICES" },
   { href: "/case-studies", label: "CASE STUDIES" },
   { href: "/team", label: "TEAM" },
+  { href: "/contact-us", label: "CONTACT US" },
 ]
 
 function isLinkActive(pathname: string, href: string) {
@@ -79,6 +80,14 @@ export function Nav() {
         >
           TEAM
         </Link>
+
+                  <Link
+            href="/contact-us"
+            className={getLinkClass("/contact-us", "hover:text-primary-accent")}
+          >
+            CONTACT US
+          </Link>
+
       </div>
 
       <Link href="/#consultation" className="hidden xl:block flex-shrink-0">
@@ -125,6 +134,13 @@ export function Nav() {
           className={getLinkClass("/team", "hover:text-primary-accent")}
         >
           TEAM
+        </Link>
+
+          <Link
+          href="/contact-us"
+          className={getLinkClass("/contact-us", "hover:text-primary-accent")}
+        >
+          CONTACT US
         </Link>
 
         <MobileMenuButton />
