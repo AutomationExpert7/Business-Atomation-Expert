@@ -86,8 +86,8 @@
 }
 
 /* ==========================================================
-   Custom additions on top of Tailwind — mobile menu overlay
-   and infinite testimonial marquee.
+   Custom additions on top of Tailwind — mobile menu overlay,
+   modal overlay, and infinite testimonial marquee.
    ========================================================== */
 
 .mobile-menu-overlay {
@@ -164,6 +164,10 @@
 }
 
 body.menu-open {
+  overflow: hidden;
+}
+
+body.modal-open {
   overflow: hidden;
 }
 
@@ -474,56 +478,6 @@ body.menu-open {
 .team-btn:hover {
   background: #f5c99a;
   color: #0b0d12;
-}
-
-/* ==========================================================
-   Case studies page — stats strip
-   ========================================================== */
-
-.cs-stats-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 8px !important;
-  max-width: 72rem;
-  margin: 0 auto;
-}
-.cs-stats-grid > div {
-  text-align: center;
-  padding: 12px 6px;
-  border-radius: 16px;
-  background: rgba(17, 24, 39, 0.5);
-  border: 1px solid rgba(55, 65, 81, 0.3);
-}
-.cs-stats-num {
-  font-weight: 700;
-  color: #f5c99a;
-  margin-bottom: 4px;
-  font-size: 18px;
-  line-height: 1.15;
-}
-.cs-stats-label {
-  color: #c9ccd1;
-  font-size: 9.5px;
-  line-height: 1.25;
-}
-@media (min-width: 640px) {
-  .cs-stats-grid {
-    gap: 20px !important;
-  }
-  .cs-stats-grid > div {
-    padding: 24px;
-  }
-  .cs-stats-num {
-    font-size: 34px;
-  }
-  .cs-stats-label {
-    font-size: 14px;
-  }
-}
-@media (min-width: 768px) {
-  .cs-stats-num {
-    font-size: 38px;
-  }
 }
 
 /* ==========================================================
