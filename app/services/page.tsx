@@ -30,7 +30,7 @@ export default function ServicesPage() {
             Our <span className="text-primary-accent">Services</span>
           </h1>
           <p className="text-lg md:text-xl text-untitled-ui-gray300 max-w-3xl mx-auto">
-            Business Automation and RevOps built for growing teams — we
+            Business Automation and RevOps built for growing teams we
             connect your CRM, sales, marketing and operations into one system
             that runs itself.
           </p>

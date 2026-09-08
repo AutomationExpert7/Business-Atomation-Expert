@@ -20,14 +20,14 @@ export const services: ServiceItem[] = [
     icon: "grid",
     title: "CRM & Sales Pipeline Automation",
     description:
-      "We clean up and automate your CRM so every deal stage, task and follow-up moves itself — no more manually updating pipelines.",
+      "We clean up and automate your CRM so every deal stage, task and follow-up moves itself no more manually updating pipelines.",
   },
   {
     tag: "Sales",
     icon: "target",
     title: "Lead Routing & Qualification",
     description:
-      "New leads get scored and routed to the right rep in seconds, from any source — website, ads or referral partners.",
+      "New leads get scored and routed to the right rep in seconds, from any source website, ads or referral partners.",
   },
   {
     tag: "RevOps",
@@ -41,7 +41,7 @@ export const services: ServiceItem[] = [
     icon: "onboarding",
     title: "Client Onboarding Automation",
     description:
-      "From signed deal to fully set-up client — contracts, CRM records and kickoff tasks trigger automatically.",
+      "From signed deal to fully set-up client contracts, CRM records and kickoff tasks trigger automatically.",
   },
   {
     tag: "Finance",
@@ -69,7 +69,7 @@ export const services: ServiceItem[] = [
     icon: "sync",
     title: "System & Data Integration",
     description:
-      "We connect your CRM, ERP and finance tools so data syncs both ways — zero double entry, zero errors.",
+      "We connect your CRM, ERP and finance tools so data syncs both ways zero double entry, zero errors.",
   },
   {
     tag: "Support",
