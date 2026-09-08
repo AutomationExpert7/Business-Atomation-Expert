@@ -86,16 +86,16 @@
 }
 
 /* ==========================================================
-   Custom additions on top of Tailwind — mobile menu overlay,
-   modal overlay, and infinite testimonial marquee.
+   Custom additions on top of Tailwind — mobile menu overlay
+   and infinite testimonial marquee.
    ========================================================== */
 
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(2px);
+  z-index: 9999;
+  background: rgba(6, 6, 6, 0.92);
+  backdrop-filter: blur(8px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -111,9 +111,10 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: min(85vw, 340px);
+  width: 100%;
   background: #0d0d0d;
   border-left: 1px solid rgba(253, 221, 189, 0.25);
+  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -124,6 +125,34 @@
 
 .mobile-menu-overlay.open .mobile-menu-panel {
   transform: translateX(0);
+}
+
+@media (min-width: 480px) {
+  .mobile-menu-panel {
+    width: min(85vw, 340px);
+  }
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 28px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 1px solid rgba(253, 221, 189, 0.3);
+  background: transparent;
+  color: rgb(253, 221, 189);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(253, 221, 189, 0.1);
+  border-color: rgb(253, 221, 189);
 }
 
 .mobile-menu-link {
@@ -164,10 +193,6 @@
 }
 
 body.menu-open {
-  overflow: hidden;
-}
-
-body.modal-open {
   overflow: hidden;
 }
 

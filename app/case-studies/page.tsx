@@ -36,10 +36,7 @@ export default function CaseStudiesPage() {
             Case <span className="text-primary-accent">Studies</span>
           </h1>
           <p className="text-lg md:text-xl text-untitled-ui-gray300 mb-4 max-w-3xl mx-auto">
-            Real businesses, real bottlenecks, real automations. Here&apos;s
-            how our team turned repetitive manual work into systems that run
-            themselves — and what it meant for the people who used to do that
-            work by hand.
+           See how we turn repetitive manual work into practical business automations. Explore real examples of the problems we solved, the systems we built and the difference they made for each business. 
           </p>
         </div>
       </section>

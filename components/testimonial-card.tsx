@@ -4,11 +4,21 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import type { Testimonial } from "@/lib/testimonials"
 
-export function TestimonialCard({ tags, quote, name, role }: Testimonial) {
+interface TestimonialCardProps extends Testimonial {
+  className?: string
+}
+
+export function TestimonialCard({
+  tags,
+  quote,
+  name,
+  role,
+  className,
+}: TestimonialCardProps) {
   return (
-    <div className="flex-shrink-0 w-80">
+    <div className={className ?? "flex-shrink-0 w-64 sm:w-72 md:w-80"}>
       <Card className="bg-untitled-ui-gray800/50 border-untitled-ui-gray700 rounded-2xl h-full">
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag, i) => (
               <Badge

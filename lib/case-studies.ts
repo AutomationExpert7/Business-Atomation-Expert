@@ -26,7 +26,7 @@ export const featuredCaseStudy: FeaturedCaseStudy = {
   title:
     "From 3 Days to 3 Minutes: Automating Lead Routing for a Growing Brokerage",
   description:
-    "A 40-agent brokerage was losing leads to slow follow-up — new inquiries sat in a shared inbox for days before anyone claimed them. We built an automated intake system that pulls leads from the website, ads and referral partners, scores them, and routes each one to the right agent within seconds, with instant SMS and email follow-up.",
+    "A 40-agent brokerage was losing leads because new inquiries sat in a shared inbox for days before anyone followed up. We built an automated intake system that pulls leads from the website, ads and referral partners, scores them and routes each one to the right agent within seconds, with instant SMS notifications.",
   results: [
     "83% faster first response",
     "27% more leads converted",

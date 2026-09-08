@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import { X, Download } from "lucide-react"
 
 import { getEmbedUrl, getDownloadUrl, type CaseStudyResource } from "@/lib/drive"
@@ -16,7 +17,11 @@ export function CaseStudyModal({
   title,
   onClose,
 }: CaseStudyModalProps) {
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
+    setMounted(true)
+
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") onClose()
     }
@@ -30,19 +35,21 @@ export function CaseStudyModal({
     }
   }, [onClose])
 
+  if (!mounted) return null
+
   const embedUrl = getEmbedUrl(resource)
   const downloadUrl = getDownloadUrl(resource)
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[1000] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
     >
-      <div className="bg-untitled-ui-gray900 border border-untitled-ui-gray700 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
+      <div className="bg-untitled-ui-gray900 border border-untitled-ui-gray700 rounded-2xl w-full max-w-6xl h-[95vh] max-h-[95vh] flex flex-col overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-untitled-ui-gray700 flex-shrink-0">
-          <h3 className="text-base sm:text-lg font-semibold truncate pr-4">
+          <h3 className="text-white text-base sm:text-lg font-semibold truncate pr-4">
             {title}
           </h3>
 
@@ -72,11 +79,12 @@ export function CaseStudyModal({
           <iframe
             src={embedUrl}
             title={title}
-            className="w-full h-full min-h-[60vh]"
+            className="w-full h-full min-h-[70vh]"
             allow="autoplay"
           />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

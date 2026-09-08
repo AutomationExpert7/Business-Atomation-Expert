@@ -1,9 +1,9 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu } from "lucide-react"
-import { useState } from "react"
+import { Menu, X } from "lucide-react"
 
 const links = [
   { href: "/", label: "HOME" },
@@ -11,17 +11,27 @@ const links = [
   { href: "/case-studies", label: "CASE STUDIES" },
   { href: "#", label: "BLOG" },
   { href: "/team", label: "TEAM" },
+  { href: "/contact-us", label: "CONTACT US" },
 ]
-
-function isLinkActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/"
-  if (href === "#") return false
-  return pathname === href || pathname.startsWith(`${href}/`)
-}
 
 export function MobileMenuButton() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("menu-open")
+    } else {
+      document.body.classList.remove("menu-open")
+    }
+    return () => {
+      document.body.classList.remove("menu-open")
+    }
+  }, [open])
 
   return (
     <>
@@ -33,34 +43,47 @@ export function MobileMenuButton() {
         <Menu className="h-6 w-6" />
       </button>
 
-      <div
-        className={`mobile-menu-overlay${open ? " open" : ""}`}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setOpen(false)
-        }}
-      >
-        <div className="mobile-menu-panel">
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`mobile-menu-link${isLinkActive(pathname, link.href) ? " active-link" : ""}`}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact-us"
-            className="mobile-menu-cta-wrap"
-            onClick={() => setOpen(false)}
+      {mounted &&
+        createPortal(
+          <div
+            className={`mobile-menu-overlay${open ? " open" : ""}`}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setOpen(false)
+            }}
           >
-            <button type="button" className="mobile-menu-cta">
-              Book Consultation
-            </button>
-          </Link>
-        </div>
-      </div>
+            <div className="mobile-menu-panel">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="mobile-menu-close"
+              >
+                <X className="h-6 w-6" />
+              </button>
+
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="mobile-menu-link"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/contact-us"
+                className="mobile-menu-cta-wrap"
+                onClick={() => setOpen(false)}
+              >
+                <button type="button" className="mobile-menu-cta">
+                  Book Consultation
+                </button>
+              </Link>
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   )
 }
