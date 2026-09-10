@@ -1,3 +1,4 @@
+import Link from "next/link"
 import {
   LayoutGrid,
   Target,
@@ -36,6 +37,9 @@ export function ServiceCard({ tag, title, description, icon }: ServiceItem) {
         <span className="svc-tag">{tag}</span>
         <h3 className="svc-title">{title}</h3>
         <p className="svc-desc">{description}</p>
+        <Link href="/#consultation" className="svc-cta">
+          Book Consultation
+        </Link>
       </div>
     </div>
   )

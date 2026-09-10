@@ -6,39 +6,39 @@ export function Footer() {
   return (
     <footer className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 border-t border-untitled-ui-gray800 relative z-10">
       <div className="max-w-7xl mx-auto">
-        {/* Mobile / tablet stacked layout */}
-        <div className="flex flex-col space-y-6 lg:hidden">
+        {/* Mobile / tablet stacked layout — centered on all sizes below lg */}
+        <div className="flex flex-col items-center text-center space-y-6 lg:hidden">
           <Link href="/">
-            <div className="flex items-center justify-center sm:justify-start space-x-3">
+            <div className="flex items-center justify-center space-x-3">
               <div className="w-10 h-10 border-2 border-primary-accent rounded flex items-center justify-center">
                 <div className="text-primary-accent font-bold text-sm">
                   <div className="text-xs leading-none">B+</div>
                   <div className="text-xs leading-none">AE</div>
                 </div>
               </div>
-              <span className="text-xl sm:text-2xl font-semibold text-primary-accent text-center sm:text-left">
+              <span className="text-xl sm:text-2xl font-semibold text-primary-accent">
                 Business Automations Expert
               </span>
             </div>
           </Link>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-untitled-ui-gray500">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-untitled-ui-gray500">
             <a
               href="tel:+15097923594"
-              className="text-center sm:text-left hover:text-primary-accent transition-colors"
+              className="hover:text-primary-accent transition-colors"
             >
               (509) 792-3594
             </a>
 
             <a
               href="mailto:farry@businessautomationsexpert.com"
-              className="text-center sm:text-left break-all sm:break-normal hover:text-primary-accent transition-colors"
+              className="break-all sm:break-normal hover:text-primary-accent transition-colors"
             >
               farry@businessautomationsexpert.com
             </a>
           </div>
 
-          <div className="flex justify-center sm:justify-start">
+          <div className="flex justify-center">
             <Link href="/#consultation">
               <Button
                 variant="outline"

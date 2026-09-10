@@ -25,8 +25,8 @@ export function TestimonialCard({
                 key={tag}
                 className={
                   i === 0
-                    ? "bg-primary-accent text-dark-primary text-xs px-2 py-1 rounded-full hover:bg-secondary/80"
-                    : "bg-untitled-ui-gray700 text-untitled-ui-gray300 text-xs px-2 py-1 rounded-full hover:bg-secondary/80"
+                    ? "bg-primary-accent text-dark-primary text-xs px-2 py-1 rounded-full hover:bg-primary-accent/90 hover:text-dark-primary transition-colors"
+                    : "bg-untitled-ui-gray700 text-untitled-ui-gray300 text-xs px-2 py-1 rounded-full hover:bg-untitled-ui-gray600 hover:text-untitled-ui-white transition-colors"
                 }
               >
                 {tag}

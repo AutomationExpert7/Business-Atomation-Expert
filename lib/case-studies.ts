@@ -32,7 +32,8 @@ export const featuredCaseStudy: FeaturedCaseStudy = {
     "27% more leads converted",
     "20 hrs/week saved",
   ],
-  image: "/images/digital-automation.webp",
+  // image: "/images/digital-automation.webp",
+   image: "/images/CRM-software-screen-data.jpg",
   imageAlt: "Automated lead routing dashboard for a real estate brokerage",
 }
 

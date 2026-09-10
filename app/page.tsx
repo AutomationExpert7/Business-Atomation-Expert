@@ -144,7 +144,7 @@ export default function HomePage() {
           </h2>
           <div className="space-y-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4">
+              <div className="space-y-4 order-2 lg:order-none">
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 bg-primary-accent rounded-full flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-dark-primary" />
@@ -163,12 +163,12 @@ export default function HomePage() {
                 <p className="text-untitled-ui-gray300 text-base leading-relaxed">
                   We connect your CRM, marketing platforms and customer
                   success tools into a single automated Revenue Operations
-                  (RevOps) workflow — so leads, deals and renewals flow
+                  (RevOps) workflow so leads, deals and renewals flow
                   smoothly with no manual hand-offs, no data silos and full
                   pipeline visibility from first touch to closed-won.
                 </p>
               </div>
-              <div className="relative">
+              <div className="relative order-1 lg:order-none">
                 <div className="relative overflow-hidden rounded-2xl">
                   <Image
                     src="/images/digital-automation.webp"
@@ -264,8 +264,8 @@ export default function HomePage() {
               <div className="relative">
                 <div className="relative overflow-hidden rounded-2xl">
                   <Image
-                    src="/images/digital-automation.webp"
-                    alt="Hand with digital overlay representing process automation"
+                    src="/images/consolidation-automation.jpg"
+                    alt="Consolidation and process automations"
                     width={400}
                     height={300}
                     className="w-full h-[300px] object-cover"

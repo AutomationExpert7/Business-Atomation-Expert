@@ -38,9 +38,9 @@ export function MobileMenuButton() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 lg:hidden text-primary-accent hover:bg-primary-accent/10 mobile-menu-btn"
+        className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-8 [&_svg]:shrink-0 h-12 w-12 lg:hidden text-primary-accent hover:bg-primary-accent/10 mobile-menu-btn"
       >
-        <Menu className="h-6 w-6" />
+        <Menu className="h-8 w-8" />
       </button>
 
       {mounted &&
@@ -72,7 +72,7 @@ export function MobileMenuButton() {
                 </Link>
               ))}
               <Link
-                href="/contact-us"
+                href="/#consultation"
                 className="mobile-menu-cta-wrap"
                 onClick={() => setOpen(false)}
               >
