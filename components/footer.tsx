@@ -31,10 +31,10 @@ export function Footer() {
             </a>
 
             <a
-              href="mailto:farry@businessautomationsexpert.com"
+              href="mailto:laiba@businessautomationsexpert.com "
               className="break-all sm:break-normal hover:text-primary-accent transition-colors"
             >
-              farry@businessautomationsexpert.com
+              laiba@businessautomationsexpert.com
             </a>
           </div>
 
@@ -74,11 +74,12 @@ export function Footer() {
               (509) 792-3594
             </a>
 
+
             <a
-              href="mailto:farry@businessautomationsexpert.com"
+              href="mailto:laiba@businessautomationsexpert.com "
               className="hover:text-primary-accent transition-colors"
             >
-              farry@businessautomationsexpert.com
+              laiba@businessautomationsexpert.com
             </a>
           </div>
 

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import Script from "next/script"
 import {
   Calendar,
   Crown,
@@ -115,8 +114,16 @@ export default function HomePage() {
           <div className="space-y-3 relative z-10">
             {[
               { href: "/team", icon: Users, label: "Highly personalized team" },
-              { href: "/case-studies", icon: Crown, label: "Hands-on, highly specialized" },
-              { href: "#consultation", icon: TriangleAlert, label: "Get the attention you need" },
+              {
+                href: "/case-studies",
+                icon: Crown,
+                label: "Hands-on, highly specialized",
+              },
+              {
+                href: "#consultation",
+                icon: TriangleAlert,
+                label: "Get the attention you need",
+              },
             ].map(({ href, icon: Icon, label }) => (
               <a key={label} className="block" href={href}>
                 <div className="flex items-center space-x-3 p-4 bg-untitled-ui-gray900/50 rounded-lg border border-untitled-ui-gray700/30">
@@ -228,6 +235,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-l from-blue-900/20 to-transparent" />
               </div>
             </div>
+
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-4 lg:order-1">
                 <div className="flex items-center space-x-4">
@@ -306,7 +314,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Consultation / Calendly */}
+      {/* Consultation / Booking */}
       <section className="px-8 py-20 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -315,30 +323,41 @@ export default function HomePage() {
                 <Calendar className="w-8 h-8 text-dark-primary" />
               </div>
             </div>
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to <span className="text-primary-accent">get started?</span>
             </h2>
+
             <p className="text-untitled-ui-gray300 text-lg max-w-3xl mx-auto">
               Schedule a free consultation with our automation experts.
               We&apos;ll discuss your business needs and show you exactly how
               we can help streamline your processes.
             </p>
           </div>
+
           <div
-            className="bg-untitled-ui-gray800/30 rounded-3xl md:p-8 p-0 border border-untitled-ui-gray700"
             id="consultation"
+            className="bg-untitled-ui-gray800/30 rounded-3xl border border-untitled-ui-gray700 overflow-hidden"
           >
-            <div
-              className="calendly-inline-widget overflow-hidden"
-              data-url="https://calendly.com/businessautomationsexpert/business-automation-expert?hide_gdpr_banner=1"
-              style={{
-                minWidth: "220px",
-                height: "655px",
-                borderRadius: "16px",
-                overflow: "hidden",
-              }}
-            />
+            <div className="w-full min-h-[750px]">
+              <iframe
+                src="https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
+                width="100%"
+                height="750"
+                title="Schedule a consultation"
+                allow="clipboard-write; fullscreen"
+                loading="lazy"
+                style={{
+                  border: 0,
+                  width: "100%",
+                  height: "750px",
+                  display: "block",
+                  borderRadius: "16px",
+                }}
+              />
+            </div>
           </div>
+
           <div className="text-center mt-12">
             <p className="text-untitled-ui-gray400 text-sm">
               ⏰ Free 30-minute consultation • 🚀 No commitment required • 💡
@@ -354,6 +373,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16">
             How does it <span className="text-primary-accent">work?</span>
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
               {
@@ -391,6 +411,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
             {[
               {
@@ -422,6 +443,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
           <div className="text-center">
             <a href="#consultation">
               <Button
@@ -442,6 +464,7 @@ export default function HomePage() {
             <span className="text-primary-accent">Types of automations</span>{" "}
             we can implement for you
           </h2>
+
           <p className="text-center text-untitled-ui-gray300 text-lg mb-16">
             We target{" "}
             <span className="text-primary-accent font-semibold">
@@ -449,6 +472,7 @@ export default function HomePage() {
             </span>{" "}
             areas to help teams perform at their best
           </p>
+
           <div className="grid lg:grid-cols-3 gap-8">
             {automationCategories.map((category) => (
               <div key={category.title} className="space-y-6">
@@ -456,9 +480,13 @@ export default function HomePage() {
                   <div className="w-8 h-8 border-2 border-primary-accent rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-primary-accent rounded-full" />
                   </div>
-                  <span className="text-primary-accent">{category.title}</span>
+                  <span className="text-primary-accent">
+                    {category.title}
+                  </span>
                 </h3>
+
                 <div className="h-1 bg-primary-accent rounded-full" />
+
                 <div className="space-y-4">
                   {category.items.map((item) => (
                     <Card
@@ -474,6 +502,7 @@ export default function HomePage() {
                             <Plus className="w-5 h-5 text-dark-primary" />
                           </div>
                         </div>
+
                         <p className="text-untitled-ui-gray300 text-sm">
                           {item.description}
                         </p>
@@ -484,10 +513,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
           <div className="text-center mt-16">
             <p className="text-untitled-ui-gray300 mb-8 text-lg">
               and much much more...
             </p>
+
             <a href="#consultation">
               <Button
                 variant="outline"
@@ -511,6 +542,7 @@ export default function HomePage() {
             className="object-contain"
           />
         </div>
+
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
@@ -520,6 +552,7 @@ export default function HomePage() {
               </span>
               ?
             </h2>
+
             <p className="text-untitled-ui-gray300 text-lg leading-relaxed mb-12">
               Our expert software technicians have been at this for years.
               Getting software to communicate well with each other can be
@@ -529,6 +562,7 @@ export default function HomePage() {
               Expert to fill the gap. Now, businesses all over are thrilled
               with their software, instead of fighting against it.
             </p>
+
             <div className="flex space-x-6">
               {[Settings, Lightbulb, Rocket].map((Icon, i) => (
                 <div
@@ -550,6 +584,7 @@ export default function HomePage() {
             What <span className="text-primary-accent">Customers</span> are
             saying
           </h2>
+
           <TestimonialMarquee />
         </div>
       </section>
@@ -561,9 +596,11 @@ export default function HomePage() {
             Want to secure the future sustainability and scalability of your
             business?
           </h2>
+
           <p className="text-primary-accent font-bold mb-8 sm:mb-10 tracking-wider text-xs sm:text-sm">
             LET US HELP YOU
           </p>
+
           <a href="#consultation">
             <Button
               variant="outline"
@@ -574,11 +611,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-      />
     </div>
   )
 }
