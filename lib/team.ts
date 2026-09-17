@@ -6,33 +6,28 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
-    name: "Muhammad Arslan",
+    name: "Laiba",
     role: "Founder & Lead Automation Engineer",
-    avatar: "https://i.pravatar.cc/300?img=12",
-  },
-  {
-    name: "Sarah Chen",
-    role: "RevOps & CRM Strategist",
     avatar: "https://i.pravatar.cc/300?img=47",
   },
   {
-    name: "David Okafor",
+    name: "Farry",
+    role: "RevOps & CRM Strategist",
+    avatar: "https://i.pravatar.cc/300?img=12",
+  },
+  {
+    name: "Shazzy",
     role: "Integrations & API Specialist",
     avatar: "https://i.pravatar.cc/300?img=33",
   },
   {
-    name: "Priya Nair",
+    name: "Jazzy",
     role: "Workflow & RPA Developer",
     avatar: "https://i.pravatar.cc/300?img=45",
   },
   {
-    name: "Jason Meyers",
+    name: "Aqsa",
     role: "Process Consultant",
-    avatar: "https://i.pravatar.cc/300?img=68",
-  },
-  {
-    name: "Elena Rossi",
-    role: "Client Success Manager",
     avatar: "https://i.pravatar.cc/300?img=44",
   },
 ]
