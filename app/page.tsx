@@ -337,7 +337,7 @@ export default function HomePage() {
 
           <div
             id="consultation"
-            className="max-w-4xl mx-auto bg-untitled-ui-gray800/30 rounded-3xl border border-untitled-ui-gray700 overflow-hidden"
+            className="bg-untitled-ui-gray800/30 rounded-3xl border border-untitled-ui-gray700 overflow-hidden"
           >
             <div className="w-full min-h-[750px]">
               <iframe
