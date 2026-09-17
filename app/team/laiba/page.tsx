@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function LaibaSchedulePage() {
   return (
-    <main className="relative z-10 px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-      <div className="max-w-3xl mx-auto text-center mb-10">
+    <main className="relative z-10 px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+      <div className="w-[90%] mx-auto text-center mb-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-untitled-ui-white">
           Schedule a meeting with{" "}
           <span className="text-primary-accent">Laiba</span>
@@ -18,17 +18,15 @@ export default function LaibaSchedulePage() {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 bg-dark-primary shadow-xl">
-        <div className="w-full" style={{ height: "700px" }}>
-          <iframe
-            src="https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
-            width="100%"
-            height="100%"
-            scrolling="yes"
-            style={{ border: 0 }}
-            title="Schedule a meeting with Laiba"
-          />
-        </div>
+      <div className="w-[90%] mx-auto" style={{ height: "800px" }}>
+        <iframe
+          src="https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
+          width="100%"
+          height="100%"
+          scrolling="yes"
+          style={{ border: 0 }}
+          title="Schedule a meeting with Laiba"
+        />
       </div>
     </main>
   )
