@@ -339,7 +339,6 @@ export default function HomePage() {
             id="consultation"
             className="bg-untitled-ui-gray800/30 rounded-3xl border border-untitled-ui-gray700 overflow-hidden"
           >
-            <div className="w-full min-h-[750px]">
               <iframe
                 src="https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
                 width="100%"
@@ -355,7 +354,6 @@ export default function HomePage() {
                   borderRadius: "16px",
                 }}
               />
-            </div>
           </div>
 
           <div className="text-center mt-12">
