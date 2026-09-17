@@ -6,7 +6,7 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
-    name: "M. Arslan",
+    name: "M.Arslan",
     role: "Founder & Lead Automation Engineer",
     avatar: "https://i.pravatar.cc/300?img=12",
   },
