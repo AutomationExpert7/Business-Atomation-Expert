@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import type { TeamMember } from "@/lib/team"
 
-export function TeamCard({ name, role, avatar }: TeamMember) {
+export function TeamCard({ name, slug, role, avatar }: TeamMember) {
   return (
     <div className="team-card">
       <div className="team-card-inner">
@@ -17,7 +17,7 @@ export function TeamCard({ name, role, avatar }: TeamMember) {
         </div>
         <h3 className="team-name">{name}</h3>
         <p className="team-role">{role}</p>
-        <Link className="team-btn" href="/#consultation">
+        <Link className="team-btn" href={`/team/${slug}`}>
           Schedule a Meeting
         </Link>
       </div>

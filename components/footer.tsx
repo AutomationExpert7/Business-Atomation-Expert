@@ -11,14 +11,14 @@ export function Footer() {
         <div className="flex flex-col items-center text-center space-y-6 lg:hidden">
           <Link href="/">
             <div className="flex items-center justify-center space-x-3">
-              <div className="w-10 h-10 border-2 border-primary-accent rounded flex items-center justify-center">
+              <div className="w-9 h-9 flex-shrink-0 border-2 border-primary-accent rounded flex items-center justify-center">
                 <div className="text-primary-accent font-bold text-sm">
                   <div className="text-xs leading-none">B+</div>
                   <div className="text-xs leading-none">AE</div>
                 </div>
               </div>
 
-              <span className="text-xl sm:text-2xl font-semibold text-primary-accent">
+              <span className="text-xl sm:text-2xl font-semibold text-primary-accent whitespace-nowrap">
                 Business Automations Expert
               </span>
             </div>
@@ -30,14 +30,13 @@ export function Footer() {
             and operations into one system that runs itself.
           </p>
 
-          <div className="flex flex-col items-center space-y-3 text-sm text-untitled-ui-gray300 pt-1">
-
+          <div className="flex flex-col items-center space-y-4 text-sm text-untitled-ui-gray300 pt-1">
             <a
               href="tel:+12312789640"
               className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
             >
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <span>+1 2312 789 640 (US)</span>
+              <span>+1 2312 789 640</span>
             </a>
 
             <a
@@ -45,7 +44,7 @@ export function Footer() {
               className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
             >
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <span>+44 1925 257 106 (UK)</span>
+              <span>+44 1925 257 106</span>
             </a>
 
             <a
@@ -53,16 +52,16 @@ export function Footer() {
               className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
             >
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <span>+61 480 811 022 (Australia)</span>
+              <span>+61 480 811 022</span>
             </a>
 
-              <a
-            href="mailto:laiba@businessautomationsexpert.com"
-            className="flex items-center space-x-2 break-all sm:break-normal text-sm text-untitled-ui-gray300 hover:text-primary-accent transition-colors"
-          >
-            <Mail className="w-4 h-4 flex-shrink-0" />
-            <span>laiba@businessautomationsexpert.com</span>
-          </a>
+            <a
+              href="mailto:laiba@businessautomationsexpert.com"
+              className="flex items-center space-x-2 break-all sm:break-normal text-sm text-untitled-ui-gray300 hover:text-primary-accent transition-colors"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span>laiba@businessautomationsexpert.com</span>
+            </a>
           </div>
 
           <div className="flex justify-center">
@@ -87,15 +86,15 @@ export function Footer() {
           <div className="hidden lg:flex justify-between items-start">
             <div className="flex flex-col space-y-4 max-w-xs">
               <Link href="/">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 border-2 border-primary-accent rounded flex items-center justify-center">
+                <div className="flex items-center space-x-3 whitespace-nowrap">
+                  <div className="w-12 h-12 flex-shrink-0 border-2 border-primary-accent rounded flex items-center justify-center">
                     <div className="text-primary-accent font-bold text-sm">
                       <div className="text-xs leading-none">B+</div>
                       <div className="text-xs leading-none">AE</div>
                     </div>
                   </div>
 
-                  <span className="text-2xl font-semibold text-primary-accent">
+                  <span className="text-2xl font-semibold text-primary-accent whitespace-nowrap">
                     Business Automations Expert
                   </span>
                 </div>
@@ -103,22 +102,19 @@ export function Footer() {
 
               <p className="text-sm text-untitled-ui-gray300 leading-relaxed">
                 Business Automation &amp; RevOps experts helping teams
-              
                 eliminate manual work and unify their CRM, sales,
-
                 marketing and operations into one system that runs
-                
                 itself.
               </p>
             </div>
 
-            <div className="flex flex-col space-y-3 text-sm text-untitled-ui-gray300">
+            <div className="flex flex-col space-y-4 text-sm text-untitled-ui-gray300">
               <a
                 href="tel:+12312789640"
                 className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+1 2312 789 640 (US)</span>
+                <span>+1 2312 789 640</span>
               </a>
 
               <a
@@ -126,7 +122,7 @@ export function Footer() {
                 className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+44 1925 257 106 (UK)</span>
+                <span>+44 1925 257 106</span>
               </a>
 
               <a
@@ -134,7 +130,7 @@ export function Footer() {
                 className="flex items-center space-x-2 hover:text-primary-accent transition-colors"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+61 480 811 022 (Australia)</span>
+                <span>+61 480 811 022</span>
               </a>
 
               <a
