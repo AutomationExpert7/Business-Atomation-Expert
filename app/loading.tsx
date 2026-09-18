@@ -1,3 +1,5 @@
 export default function Loading() {
-  return null
+  return (
+    <main className="min-h-screen" />
+  )
 }
