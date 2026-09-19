@@ -17,7 +17,7 @@ export function TeamCard({ name, slug, role, avatar }: TeamMember) {
         </div>
         <h3 className="team-name">{name}</h3>
         <p className="team-role">{role}</p>
-        <Link className="team-btn" href={`/team/${slug}`}>
+        <Link className="team-btn" href={`${slug}`}>
           Schedule a Meeting
         </Link>
       </div>
