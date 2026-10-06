@@ -50,10 +50,10 @@ export default function TeamPage() {
       {/* Closing CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10">
         <div className="max-w-5xl mx-auto text-center bg-untitled-ui-gray800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight px-2 sm:px-4">
-            Want to secure the future sustainability and scalability of your
-            business?
-          </h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed mb-4 sm:mb-6 px-2 sm:px-4">
+              Want to secure the future sustainability and scalability of your
+              business?
+            </h2>
           <p className="text-primary-accent font-bold mb-8 sm:mb-10 tracking-wider text-xs sm:text-sm">
             LET US HELP YOU
           </p>
