@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 
 import { team } from "@/lib/team"
 
+const DEFAULT_BOOKING_URL =
+  "https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
+
 interface PageProps {
   params: { slug: string }
 }
@@ -42,7 +45,7 @@ export default function TeamMemberSchedulePage({ params }: PageProps) {
 
       <div className="w-[90%] mx-auto" style={{ height: "800px" }}>
         <iframe
-          src="https://bookings.cloud.microsoft/book/Booking@businessautomationsexpert.com/?ismsaljsauthenabled"
+          src={member.bookingUrl ?? DEFAULT_BOOKING_URL}
           width="100%"
           height="100%"
           scrolling="yes"
